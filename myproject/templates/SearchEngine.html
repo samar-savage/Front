@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.DocumentType.label }} {{ form.DocumentType() }}<br>
+    {{ form.File.label }} {{ form.File() }}<br>
+    {{ form.Search_Methods.label }} {{ form.Search_Methods() }}<br>
+    {{ form.Input.label }} {{ form.Input() }}<br>
+    {{ form.submit() }}
+</form>
+
+  <a href="{{url_for('Test')}}" >Apply request</a>
+{% endblock %}
