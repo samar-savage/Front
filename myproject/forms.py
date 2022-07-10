@@ -28,12 +28,10 @@ class SearchForm(FlaskForm):
     DocumentType = RadioField('Please choose your file type:', choices=[('Pdf','pdf'),('Excel','Excel'),('Word','Word')])
     File = FileField(u'Select file', validators=[FileAllowed([ 'Pdf'])])
     Search_Methods = SelectField(u'Select Method',choices=[('Text','Search in Texts'),('Images','Search in images')], validators=[DataRequired()])
-    Input = StringField('Input', validators=[DataRequired(),Email()])
+    Input = StringField('Input', validators=[DataRequired()])
     submit = SubmitField('Go!')
 
-class CrudForm(FlaskForm):
-    button1 = SubmitField('action1')
-    button2 = SubmitField('action2')
+
 
     def check_email(self, field):
         # Check if not None for that user email!

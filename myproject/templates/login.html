@@ -1,10 +1,43 @@
 {% extends "base.html" %}
-{% block content %}
-<form method="POST">
-    {# This hidden_tag is a CSRF security feature. #}
-    {{ form.hidden_tag() }}
-    {{ form.email.label }} {{ form.email() }}
-    {{ form.password.label }} {{ form.password() }}
-    {{ form.submit() }}
+{% block body %}
+   <div class="jumbotron p-3">
+      <div class="well text-center">
+          <h1> Login Page </h1>
+       </div>
+    </div>
+<div class="container">
+    <div class="jumbotron p-2 col-sm-7 ">
+      <div class="well text-center">
+
+<form method="POST" >
+      <div class="mb-3" >
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+
+           <div class="col-sm-5"  >
+
+
+                  <label for="exampleInputEmail1" class="form-label " >Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" {{ form.email() }}>
+            </div>
+
+
+        </div>
+       <div class="mb-3">
+         <div class="col-sm-5">
+             <label for="exampleInputPassword1" class="form-label">Password</label>
+
+               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" {{ form.password() }}>
+          </div>
+
+           <button type="submit" class="btn btn-primary" {{ form.submit() }}> Submit</button>
+
+        </div>
+
 </form>
+</div>
+</div>
+</div>
+
+
 {% endblock %}

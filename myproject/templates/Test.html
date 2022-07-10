@@ -1,7 +1,15 @@
 {% extends "base.html" %}
-{% block content %}
+{% block body %}
 <div class="jumbotron">
-    <p>Please login or register!</p>
+    <p>Please login or register Pal!</p>
 </div>
+
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+
+
 
 {% endblock %}
